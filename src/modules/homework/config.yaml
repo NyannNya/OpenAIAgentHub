@@ -1,0 +1,21 @@
+# Homework Agent配置文件
+# 定義作業輔導相關的agent配置
+# 引用基礎配置: ../base_config.yaml
+
+agent_var_name: "homework_agent"    # 指定agent變量名稱
+
+name: "homework_agent"
+instructions: "決定使用者的問題專業範圍"
+# 使用基礎配置中的model_settings
+
+# Handoffs配置
+handoffs:
+  - agent_module: "src.modules.homework.handoff.history_tutor"
+    agent_var_name: "history_tutor_agent"
+  - agent_module: "src.modules.homework.handoff.math_tutor"
+    agent_var_name: "math_tutor_agent"
+
+# Guardrail配置
+input_guardrail:
+  module: "src.modules.homework.guardrail.safety_validator"
+  function: "input_validate_guardrail"

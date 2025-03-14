@@ -1,0 +1,12 @@
+# Dispatcher Agent配置文件
+# 定義dispatcher agent的行為和配置
+
+enabled: true
+description: "決定使用者的問題應該如何處理並分發到適當的專業Agent"
+name: "Dispatcher Agent"
+instructions: "決定使用者的問題應該如何處理並分發到適當的專業Agent"
+
+# 可用的handoff agents列表
+handoff_types:
+  - translation
+  - homework

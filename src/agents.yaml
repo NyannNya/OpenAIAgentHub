@@ -1,0 +1,14 @@
+# 主要agent配置文件
+# 讀取所有可用的agent modules
+
+# 翻譯相關agent
+translation:
+  enabled: true
+  description: "提供多語言翻譯服務"
+  module_path: "src.modules.translation.config.yaml"
+
+# 作業輔導相關agent
+homework:
+  enabled: true
+  description: "提供學科作業輔導服務"
+  module_path: "src.modules.homework.config.yaml"

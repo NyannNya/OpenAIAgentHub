@@ -1,0 +1,7 @@
+# 基礎配置文件
+# 定義所有agent共用的基本配置
+
+# 模型設置
+model_settings:
+  temperature: 0.7
+  top_p: 0.9

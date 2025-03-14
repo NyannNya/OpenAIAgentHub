@@ -1,0 +1,25 @@
+# Translation Agent配置文件
+# 定義翻譯相關的agent配置
+# 引用基礎配置: ../base_config.yaml
+
+agent_var_name: "orchestrator_agent"    # 指定agent變量名稱
+
+name: "orchestrator_agent"
+instructions: "這是一個翻譯工具"
+# 使用基礎配置中的model_settings
+
+# 工具配置
+tools:
+  - tool_name: "translate_to_spanish"
+    tool_description: "翻譯成西班牙語"
+    agent_module: "src.modules.translation.tool.spanish_agent"
+    agent_var_name: "spanish_agent"
+  - tool_name: "translate_to_french"
+    tool_description: "翻譯成法語"
+    agent_module: "src.modules.translation.tool.french_agent"
+    agent_var_name: "french_agent"
+
+# Guardrail配置
+input_guardrail:
+  module: "src.modules.translation.guardrail.safety_validator"
+  function: "input_validate_guardrail"
